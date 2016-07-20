@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :students
+  has_many :courses
 
   after_initialize :ensure_session_token
 
