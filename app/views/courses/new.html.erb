@@ -1,0 +1,42 @@
+<h1>Create New Course</h1>
+
+<%= render "shared/errors" %>
+
+<form action="<%= students_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+    <label for="student_name">Name</label>
+    <input
+      type="text"
+      name="student[name]"
+      id="student_name"
+      value="<%= @student.name %>">
+
+    <label for="student_birthday">Birth date</label>
+    <input
+      type="date"
+      name="student[birthday]"
+      id="student_birthday"
+      value="<%= @student.birthday %>">
+    <br>
+
+    <label for="chaperones">List of Approved Chaperones</label>
+    <input
+      type="text"
+      name="student[chaperones]"
+      id="chaperones"
+      value="<%= @student.chaperones %>">
+
+    <label for="notes">Other Notes (allergies, preferences, etc)</label>
+    <input
+      type="text"
+      name="student[notes]"
+      id="notes"
+      value="<%= @student.notes %>">
+
+
+  <input type="submit" value="Create Student">
+</form>

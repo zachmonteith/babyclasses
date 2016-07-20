@@ -1,0 +1,18 @@
+<h1><%= @student.name %></h1>
+
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Value</th>
+  </tr>
+  <% [:age, :birthday, :chaperones, :notes].each do |attr_name| %>
+    <tr>
+      <td><%= attr_name %></td>
+      <td><%= @student.send(attr_name) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if @student.user == current_user %>
+  <%= link_to "Edit #{@student.name}", edit_student_url(@student) %>
+<% end %>

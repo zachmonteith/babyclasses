@@ -1,0 +1,7 @@
+<h1>Upcoming Classes</h1>
+
+<ul>
+  <% @courses.each do |course| %>
+    <li><%= link_to course.course_name, course_url(course) %></li>
+  <% end %>
+</ul>
